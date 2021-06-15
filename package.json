@@ -1,0 +1,29 @@
+{
+  "name": "secret-show",
+  "version": "1.0.0",
+  "description": "secret show app for project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "author": "Ali Mitchell, David Crockett, Yana Mkrtchyan, Nick Rizzo, David Shaw",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
