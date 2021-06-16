@@ -3,7 +3,7 @@ const Band = require('./Band');
 const Comment = require('./Comment');
 const Role = require('./Role');
 const Show = require('./Show');
-
+const Genre = require('./Genre');
 
 User.hasMany(Show, {
     foreignKey: 'user_id'
@@ -37,6 +37,10 @@ Band.belongsTo(Show, {
     foreignKey: 'band_id'
 });
 
+Show.hasMany(Genre, {
+    foreignKey: 'genre'
+});
 
+Genre.belongsTo(Show);
 
 module.exports = { User, Band, Comment, Role, Show };

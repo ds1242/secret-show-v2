@@ -20,7 +20,11 @@ Show.init(
         },
         genre: {
             type: DataTypes.STRING,
-            allowNull: false,            
+            allowNull: false, 
+            references: {
+                model: 'genre',
+                key: 'id'
+            }           
         },
         youtube_id: {
             type: DataTypes.STRING,
