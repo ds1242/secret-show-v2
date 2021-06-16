@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ds1242/secret-show-v2#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
