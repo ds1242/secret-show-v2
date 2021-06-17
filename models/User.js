@@ -35,14 +35,14 @@ User.init(
                 isEmail: true
             }
         },
-        role_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'role',
-                key: 'id'
-            }
-        }
+        // role_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'role',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         hooks: {
