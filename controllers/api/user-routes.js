@@ -1,12 +1,21 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Role, Comment, Band, Show, Genre } = require('../../models');
+
+router.get('/', (req, res) => {
+    User.findAll({})
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        res.status(500).json({ message: 'Cannot find users' })
+    });
+});
 
 
 router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        // role_id: req.body.role_id
     })
     .then(dbUserData => {
         req.session.save(() => {
