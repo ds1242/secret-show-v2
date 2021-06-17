@@ -43,7 +43,7 @@ article {
     flex-direction: column;
     align-content: center;
     padding-top: 20px;
-    height: 290px;
+    height: 340px;
     padding-bottom: 20px;
     Margin:75px auto 30px auto;
     background-image: linear-gradient(to right, #3b61d3, #e24c7c);
@@ -57,7 +57,11 @@ article {
     border:none;
 }
 
-#signUp p {
+#signUp input:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+#signUp h1 {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 5px;
@@ -65,6 +69,18 @@ article {
     text-align: center;
     color: ivory;
     padding: 15px;
+}
+
+#signUp a  {
+    color: ivory;
+    padding-left: 20px;
+    text-decoration: underline;
+    padding-top: 10px;
+
+}
+
+#signUp a:hover {
+    color: lightgrey;
 }
 
 #login {
@@ -88,6 +104,10 @@ article {
     border:none;
 }
 
+#login input:hover {
+    background-color: rgb(230, 230, 230);
+}
+
 #login p {
     text-transform: uppercase;
     font-weight: bold;
@@ -101,6 +121,11 @@ article {
 #join {
     width: 280px;
     font-weight: bold;
+}
+
+#join:hover {
+    width:285px;
+    height:50px;
 }
 
 footer {
