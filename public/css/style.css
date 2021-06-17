@@ -36,6 +36,37 @@ article {
     align-items: center;
 }
 
+#signUp {
+    width:280px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 20px;
+    height: 290px;
+    padding-bottom: 20px;
+    Margin:75px auto 30px auto;
+    background-image: linear-gradient(to right, #3b61d3, #e24c7c);
+}
+
+#signUp input {
+    margin: 15px 15px 15px 15px;
+    padding: 15px;
+    height: 40px;
+    border-radius: 12px;
+    border:none;
+}
+
+#signUp p {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-align: center;
+    color: ivory;
+    padding: 15px;
+}
+
 #login {
     width:280px;
     border-radius: 12px;
