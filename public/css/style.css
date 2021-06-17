@@ -27,7 +27,7 @@ header img {
 }
 
 #reflect {
-    -webkit-box-reflect: below -50px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.4)));
+    -webkit-box-reflect: below -55px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.15)));
 }
 
 article {
