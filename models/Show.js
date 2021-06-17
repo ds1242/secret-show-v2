@@ -18,14 +18,6 @@ Show.init(
                 isUrl: true
             }            
         },
-        genre_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false, 
-            references: {
-                model: 'genre',
-                key: 'id'
-            }           
-        },
         youtube_id: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -57,6 +49,14 @@ Show.init(
                 model: 'band',
                 key: 'id'
             }
+        },
+        genre_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false, 
+            references: {
+                model: 'genre',
+                key: 'id'
+            }           
         }
     },
     {

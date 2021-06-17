@@ -1,9 +1,9 @@
 const User = require('./User');
 const Band = require('./Band');
-// const Comment = require('./Comment');
-// const Role = require('./Role');
-// const Genre = require('./Genre');
-// const Show = require('./Show');
+const Comment = require('./Comment');
+const Role = require('./Role');
+const Genre = require('./Genre');
+const Show = require('./Show');
 
 
 // User.hasMany(Show, {
