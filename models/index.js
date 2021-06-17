@@ -44,4 +44,4 @@ const Show = require('./Show');
 
 // Genre.belongsTo(Show);
 
-module.exports = { User, Band};
+module.exports = { User, Band, Comment, Genre, Role, Show};
