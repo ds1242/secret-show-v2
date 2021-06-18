@@ -6,21 +6,21 @@ const Genre = require('./Genre');
 const Show = require('./Show');
 
 
-// User.hasMany(Show, {
-//     foreignKey: 'user_id'
-// });
+User.hasMany(Show, {
+    foreignKey: 'user_id'
+});
 
-// User.hasMany(Comment, {
-//     foreignKey: 'user_id'
-// });
+User.hasMany(Comment, {
+    foreignKey: 'user_id'
+});
 
 // User.hasOne(Role, {
 //     foreignKey: 'role_id'
 // });
 
-// Comment.belongsTo(User, {
-//     foreignKey: 'user_id'
-// });
+Comment.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
 // Comment.belongsTo(Band, {
 //     foreignKey: 'band_id'
@@ -41,6 +41,7 @@ const Show = require('./Show');
 // Show.hasMany(Genre, {
 //     foreignKey: 'genre'
 // });
+
 
 // Genre.belongsTo(Show);
 
