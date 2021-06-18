@@ -10,12 +10,37 @@ router.get('/', (req, res) => {
 });
 
 
+router.get('/:id', (req, res) => {
+    User.findOne({
+        where: {
+            id: req.params.id
+        },
+        // include: [
+        //     {
+        //         model: Role,
+        //         attributes: ['id', 'role_name']
+        //     }
+        // ]
+    })
+    .then(dbUserData => {
+        if(!dbUserData) {
+            res.status(404).json({ message: 'Cannont find user with this id' });
+            return;
+        }
+        res.json(dbUserData)
+    })
+    .catch(err => {
+        res.status(500).json({ message: 'something went wrong getting this user' });
+    });
+});
+
+
 router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        // role_id: req.body.role_id
+        role_id: req.body.role_id
     })
     .then(dbUserData => {
         req.session.save(() => {

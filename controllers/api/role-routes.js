@@ -20,4 +20,28 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Role.findOne({
+        where: {
+            id: req.params.id
+        },
+        // include: [
+        //     {
+        //         model: User,
+        //         attributes: ['id', 'username','password','email','role_id']
+        //     }
+        // ]
+    })
+    .then(dbRoleSingleData => {
+        if(!dbRoleSingleData) {
+            res.status(404).json({ message: 'Cannont find a role with this id' });
+            return;
+        }
+        res.json(dbRoleSingleData)
+    })
+    .catch(err => {
+        res.status(500).json({ message: 'something went wrong getting this role' });
+    });
+});
+
 module.exports = router;
