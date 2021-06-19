@@ -44,4 +44,45 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+    Role.update(
+        {
+            role_name: req.body.role_name
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+    .then(dbRoleUpdate => {
+        if(!dbRoleUpdate) {
+            res.status(404).json({ message: 'Cannot update the role' });
+            return;
+        }
+        res.json(dbRoleUpdate);
+    })
+    .catch(err => {
+        res.status(500).json({ message: 'Error updating role' });
+    });
+});
+
+router.delete('/:id', (req, res) => {
+    Role.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbRoleDelete => {
+        if(!dbRoleDelete) {
+            res.status(404).json({ message: 'Cannont Delete this Role' });
+            return;
+        }
+        res.json(dbRoleDelete);
+    })
+    .catch(err => {
+        res.status(500).json({ message: 'something went wrong deleting the role' });
+    });
+});
+
 module.exports = router;
