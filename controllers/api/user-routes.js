@@ -59,5 +59,24 @@ router.post('/', (req, res) => {
     });
 });
 
+// update a User router
+router.put('/:id', (req, res) => {
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUserUpdate => {
+        if(!dbUserUpdate[0]) {
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+        }
+        res.json(dbUserUpdate)
+    })
+    .catch(err => {
+        res.status(500).json({ message: 'Unable to update user' });
+    });
+});
 
 module.exports = router;
