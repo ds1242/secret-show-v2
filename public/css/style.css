@@ -120,12 +120,12 @@ article {
     padding: 15px;
 }
 
-#join {
+.login-join-btn {
     width: 280px;
     font-weight: bold;
 }
 
-#join:hover {
+.login-join-btn:hover {
     width:285px;
     height:50px;
 }
