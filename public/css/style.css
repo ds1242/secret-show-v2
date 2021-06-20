@@ -26,8 +26,10 @@ header img {
     justify-content: center;
 }
 
-#reflect {
-    -webkit-box-reflect: below -55px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.15)));
+
+/* This 'hover' makes the reflection happen */
+#reflect:hover {
+  -webkit-box-reflect: below -55px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.74)));
 }
 
 article {
