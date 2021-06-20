@@ -34,6 +34,7 @@ Comment.belongsTo(User, {
 //     foreignKey: 'role_id'
 // });
 
+
 // Band.belongsTo(Show, {
 //     foreignKey: 'band_id'
 // });

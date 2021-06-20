@@ -17,12 +17,7 @@ router.get('/:id', (req, res) => {
         attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
-        },
-        // include: [
-        //     {
-
-        //     }
-        // ]
+        }
     })
     .then(dbUserData => {
         if(!dbUserData) {
@@ -59,5 +54,42 @@ router.post('/', (req, res) => {
     });
 });
 
+// update a User router
+router.put('/:id', (req, res) => {
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUserUpdate => {
+        if(!dbUserUpdate[0]) {
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+        }
+        res.json(dbUserUpdate)
+    })
+    .catch(err => {
+        res.status(500).json({ message: 'Unable to update user' });
+    });
+});
+
+router.delete('/:id', (req, res) => {
+    User.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUserDelete => {
+        if(!dbUserDelete) {
+            res.status(404).json({ message: 'No User with that id'})
+            return;
+        }
+        res.json(dbUserDelete)
+    })
+    .catch(err => {
+        res.status(500).json(err);
+    });
+});
 
 module.exports = router;
