@@ -3,6 +3,7 @@ async function loginHandler(event) {
 
     const email = document.querySelector('#login-email').value.trim();
     const password = document.querySelector('#login-password').value.trim();
+    console.log(email)
 
     if (email && password) {
         const response = await fetch('api/users/login', {
@@ -15,7 +16,7 @@ async function loginHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/show')
+            document.location.replace('show')
         } else {
             alert(response.statusText)
         }
