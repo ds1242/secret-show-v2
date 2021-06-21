@@ -10,14 +10,15 @@ async function loginHandler(event) {
         const response = await fetch('api/users/login', {
             method: 'post',
             body: JSON.stringify({
-                email,
-                password
+                password,
+                email
             }),
             headers: { 'Content-type': 'application/json' }
         });
 
         if (response.ok) {
             console.log(email)
+            console.log(password)
             document.location.replace('show')
         } else {
             alert(response.statusText)
