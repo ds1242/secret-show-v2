@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { User, Comment, Band, Show, Genre } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+// Find all users
 router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
@@ -12,7 +14,7 @@ router.get('/', (req, res) => {
         });
 });
 
-
+// Find one user by id
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -84,6 +86,17 @@ router.post('/login', (req, res) => {
         });
     });
 });
+
+// This route is for loggin out
+router.post('/logout', withAuth, (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+})
 
 
 // update a User router
