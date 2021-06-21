@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Role, Comment, Band, Show, Genre } = require('../../models');
-
+//"/api/role/" - METHOD GET 
 router.get('/', (req, res) => {
     Role.findAll({})
     .then(dbRoleFindAll => res.json(dbRoleFindAll))

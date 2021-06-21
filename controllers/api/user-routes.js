@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
     })
     .then(dbUserData => {
         if(!dbUserData) {
-            res.status(404).json({ message: 'Cannont find user with this id' });
+            res.status(404).json({ message: 'Cannot find user with this id' });
             return;
         }
         res.json(dbUserData)
