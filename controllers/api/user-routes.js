@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Comment, Band, Show, Genre } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -60,6 +61,7 @@ router.post('/login', (req, res) => {
       }
     }).then(dbUserData => {
       if (!dbUserData) {
+        console.log('You are not logged in');
         res.status(400).json({ message: 'No user with that email address!' });
         return;
       }
@@ -75,7 +77,7 @@ router.post('/login', (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-  
+        console.log('You are now logged in');
         res.json({ user: dbUserData, message: 'You are now logged in!' });
       });
     });

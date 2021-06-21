@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,44 +9,44 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Secret Show</title>
 </head>
+
 <body>
-    <header id="header"> 
+    <header id="header">
         {{#if loggedIn}}
         <a href="/">
             <img id="reflect" src="./images/Secret_Show_glow.png" alt="Secret Show">
-        </a> 
+        </a>
         {{else}}
-        <a href="/">
+        {{!-- <a href="/">
             <img id="reflect" src="./images/Secret show01-01.png" alt="Secret Show">
-        </a>  
-        {{/if}}     
+        </a> --}}
+        {{/if}}
     </header>
 
     {{{ body }}}
-    
 
-    
-  
+
+
+
 
     <footer>
         <div>
             <p>
                 &#169;SecretShowV2 2021
             </p>
-                    <!-- <p>
+            <!-- <p>
                         <a href="https://github.com/dante-poe">Sage</a>
                         <a href="https://github.com/Ali-Mitchell">Ali</a>
                         <a href="https://github.com/mandahos">Amanda</a>
                         <a href="https://github.com/scochran31">Shawn</a>
                     </p> -->
-            </div>
+        </div>
     </footer>
 
-  
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-  <script src="/js/landing.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {{!--
+    <script src="/js/landing.js"></script> --}}
 
 </body>
