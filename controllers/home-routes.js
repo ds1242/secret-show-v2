@@ -17,9 +17,13 @@ router.get('/login', (req, res) => {
     res.render('login')
 });
 
-router.get('/show' , (req, res) => {
+router.get('/show', (req, res) => {
     res.render('show')
 })
+
+router.get('/create-show', (req, res) => {
+    res.render('create-show')
+});
 
 
 module.exports = router;
