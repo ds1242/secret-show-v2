@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Show extends Model {};
+class Show extends Model { };
 
 Show.init(
     {
@@ -16,7 +16,7 @@ Show.init(
             allowNull: false,
             validate: {
                 isUrl: true
-            }            
+            }
         },
         youtube_id: {
             type: DataTypes.STRING,
@@ -52,11 +52,11 @@ Show.init(
         },
         genre_id: {
             type: DataTypes.INTEGER,
-            allowNull: false, 
+            allowNull: false,
             references: {
                 model: 'genre',
                 key: 'id'
-            }           
+            }
         }
     },
     {
