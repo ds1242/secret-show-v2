@@ -11,6 +11,14 @@ Show.init(
             primaryKey: true,
             autoIncrement: true
         },
+        bandname: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        genre: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         img: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -42,22 +50,22 @@ Show.init(
                 key: 'id'
             }
         },
-        band_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'band',
-                key: 'id'
-            }
-        },
-        genre_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'genre',
-                key: 'id'
-            }
-        }
+        // band_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        //     references: {
+        //         model: 'band',
+        //         key: 'id'
+        //     }
+        // },
+        // genre_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'genre',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         sequelize,
