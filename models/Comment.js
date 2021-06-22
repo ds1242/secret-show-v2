@@ -25,22 +25,22 @@ Comment.init(
                 key: 'id'
             }
         },
-        band_id: {
+        show_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'show',
                 key: 'id'
             }
         },
-        role_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'role',
-                key: 'id'
-            }
-        }
+        // role_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'role',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         sequelize,
