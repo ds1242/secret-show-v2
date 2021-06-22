@@ -3,7 +3,27 @@ const { User, Comment, Band, Show, Genre } = require('../../models');
 
 // Find all shows
 router.get('/', (req, res) => {
-    Show.findAll()
+    Show.findAll(
+        {
+        include: {
+            model: User,
+            attributes: ['id']
+        }
+    })
+        .then(dbShowData => res.json(dbShowData))
+        .catch(err => {
+            res.status(500).json({ message: 'Cannot find show' })
+        });
+});
+
+router.get('/', (req, res) => {
+    Show.findOne(
+        {
+        include: {
+            model: User,
+            attributes: ['id']
+        }
+    })
         .then(dbShowData => res.json(dbShowData))
         .catch(err => {
             res.status(500).json({ message: 'Cannot find show' })
@@ -20,14 +40,14 @@ router.post('/', (req, res) => {
         show_location: req.body.show_location,
         show_time: req.body.show_time,
         privacy: req.body.privacy,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
-        .then(dbShowData => {
-            res.json(dbShowData)
-        })
-        .catch(err => {
-            res.status(500).json({ message: 'unable to create show' });
-        });
+
+    .then(dbShowData => res.json(dbShowData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
