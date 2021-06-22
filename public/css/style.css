@@ -26,14 +26,63 @@ header img {
     justify-content: center;
 }
 
-#reflect {
-    -webkit-box-reflect: below -50px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.4)));
+
+/* This 'hover' makes the reflection happen */
+#reflect:hover {
+  -webkit-box-reflect: below -55px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.74)));
 }
 
 article {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#signUp {
+    width:280px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 20px;
+    height: 340px;
+    padding-bottom: 20px;
+    Margin:75px auto 30px auto;
+    background-image: linear-gradient(to right, #3b61d3, #e24c7c);
+}
+
+#signUp input {
+    margin: 15px 15px 15px 15px;
+    padding: 15px;
+    height: 40px;
+    border-radius: 12px;
+    border:none;
+}
+
+#signUp input:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+#signUp h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-align: center;
+    color: ivory;
+    padding: 15px;
+}
+
+#signUp a  {
+    color: ivory;
+    padding-left: 20px;
+    text-decoration: underline;
+    padding-top: 10px;
+
+}
+
+#signUp a:hover {
+    color: lightgrey;
 }
 
 #login {
@@ -57,6 +106,10 @@ article {
     border:none;
 }
 
+#login input:hover {
+    background-color: rgb(230, 230, 230);
+}
+
 #login p {
     text-transform: uppercase;
     font-weight: bold;
@@ -67,9 +120,14 @@ article {
     padding: 15px;
 }
 
-#join {
+.login-join-btn {
     width: 280px;
     font-weight: bold;
+}
+
+.login-join-btn:hover {
+    width:285px;
+    height:50px;
 }
 
 footer {

@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+class Band extends Model {};
 
 Band.init(
     {
@@ -18,6 +19,7 @@ Band.init(
     {
     sequelize,
     timestamps: false,
+    freezeTableName: true,
     underscored: true,
     modelName: 'band'
     }
