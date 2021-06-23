@@ -1,7 +1,6 @@
 const User = require('./User');
 const Band = require('./Band');
 const Comment = require('./Comment');
-const Role = require('./Role');
 const Genre = require('./Genre');
 const Show = require('./Show');
 
@@ -34,6 +33,7 @@ Comment.belongsTo(User, {
 //     foreignKey: 'role_id'
 // });
 
+
 // Band.belongsTo(Show, {
 //     foreignKey: 'band_id'
 // });
@@ -45,4 +45,4 @@ Comment.belongsTo(User, {
 
 // Genre.belongsTo(Show);
 
-module.exports = { User, Band, Comment, Genre, Role, Show};
+module.exports = { User, Band, Comment, Genre, Show};

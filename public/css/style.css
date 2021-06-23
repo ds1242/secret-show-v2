@@ -26,8 +26,10 @@ header img {
     justify-content: center;
 }
 
-#reflect {
-    -webkit-box-reflect: below -55px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.15)));
+
+/* This 'hover' makes the reflection happen */
+#reflect:hover {
+  -webkit-box-reflect: below -55px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.74)));
 }
 
 article {
@@ -118,12 +120,12 @@ article {
     padding: 15px;
 }
 
-#join {
+.login-join-btn {
     width: 280px;
     font-weight: bold;
 }
 
-#join:hover {
+.login-join-btn:hover {
     width:285px;
     height:50px;
 }
