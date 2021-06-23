@@ -18,6 +18,9 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/show', (req, res) => {
+    if(!req.session.loggedIn) {
+        res.redirect('/')
+    }
     Show.findAll({
             include: {
                 model: User,
@@ -40,6 +43,9 @@ router.get('/show', (req, res) => {
 });
 
 router.get('/show/:id', (req, res) => {
+    if(!req.session.loggedIn) {
+        res.redirect('/')
+    }
     Show.findOne({
             where: {
                 id: req.params.id
