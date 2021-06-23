@@ -50,11 +50,15 @@ router.get('/show/:id', (req, res) => {
             } 
     })
 
-    .then(dbShowData => {
-        const shows = dbShowData.map(show => show.get({ plain: true }));
+    .then(dbShowSingleData => {
+        if(!dbShowSingleData){
+            res.status(404).json({ message: 'No show found with this id' });
+            return;
+        }
+        const show = dbShowSingleData.get({ plain: true });
 
         res.render('single-show', {
-            shows,
+            show,
             loggedIn: req.session.loggedIn
         });
     })
