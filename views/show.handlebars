@@ -1,12 +1,17 @@
-<h1>Hello world!</h1>
-
+{{#if shows.length}}
+<article>
+    <h2>Upcoming Shows</h2>
+    <ol>
+        {{#each shows as |show|}}
+        <li>
+            {{> show-info show}}
+        </li>
+        {{/each}}
+    </ol>
+</article>
+{{/if}}
 <form class='logout-form'>
     <article>
-        {{!-- <div id="login">
-            <p>Login Portal</p>
-            <input type="text" id="login-email" placeholder="Email">
-            <input type="password" id="login-password" placeholder="Password">
-        </div> --}}
 
         <button type="click" class="login-join-btn" id="logout-btn">Logout</button> 
 
@@ -21,4 +26,7 @@
     </article>
 </form>
 
+
+
+<script src='/js/create-show.js'></script>
 <script src='/js/logout.js'></script>
