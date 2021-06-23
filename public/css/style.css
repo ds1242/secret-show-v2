@@ -384,3 +384,48 @@ h3 {
     justify-content: center;
   }
   
+  /* /show  */
+
+  #create-btn a {
+    color:white;
+    text-decoration: none;
+  }
+
+  /* create-show */
+
+  #create {
+    width: 275px;
+    margin-top: 75px;
+  }
+
+  #create input {
+    width:100%;
+    padding:8px 0px 8px 20px;
+    border-radius: 12px;
+    border:none;
+    margin: 10px 5px 10px 0px;
+    text-decoration: black;
+  }
+
+  #create input:hover {
+    background-color: lightgray;
+  }
+  #create select {
+    width:100%;
+    padding:8px 0px 8px 20px;
+    border-radius: 12px;
+    border:none;
+    margin: 10px 5px 10px 0px;
+  }
+
+  #create p {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 19px;
+    text-align: center;
+    color: ivory;
+    margin-bottom: 10px;
+    /* margin-left: 5px; */
+    text-align: center;
+  }
