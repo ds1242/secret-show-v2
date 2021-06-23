@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,26 +9,30 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Secret Show</title>
 </head>
-<body>
-    
 
-    <header id="header"> 
+<body>
+
+
+    <header id="header">
         <a href="./index.html"><img id="reflect" src="./images/Secret show01-01.png" alt="Secret Show"></a>
-       
+
     </header>
 
-        <article>
-            <div id="login">
-                <p>Login to join</p>
-                <input id="username" placeholder="Username">
-                <input id="password" placeholder="Password">
-            </div>
+    {{!-- <article>
+        <div id="login">
+            <p>Login to join</p>
+            <input id="username" placeholder="Username">
+            <input id="password" placeholder="Password">
+        </div>
 
-            <button id="join">Join</button>
-               
-        </article>
-  
-    
+        <button id="join">Join</button>
+
+    </article> --}}
+
+    <div class="container">
+        {{{body}}}
+    </div>
+
 
     <!-- like buttons
     <div class="likeReturnBtns">
@@ -60,24 +65,24 @@
             <a href="./index.html"><button>Return to Genre</button></a>
         </section> 
     </div> -->
-  
-   <section>
-      <footer>
-          <div>
-              <p>
-                  &#169;SecretShowV2 2021
-                 </p>
-                 <!-- <p>
+
+    <section>
+        <footer>
+            <div>
+                <p>
+                    &#169;SecretShowV2 2021
+                </p>
+                <!-- <p>
                      <a href="https://github.com/dante-poe">Sage</a>
                      <a href="https://github.com/Ali-Mitchell">Ali</a>
                      <a href="https://github.com/mandahos">Amanda</a>
                      <a href="https://github.com/scochran31">Shawn</a>
                  </p> -->
-             </div>
-         </footer>
-     </section>    
+            </div>
+        </footer>
+    </section>
 
-   <!-- modals
+    <!-- modals
    <div class="modal">
        <div class="modal-background"></div>
        <div class="modal-content has-background-white py-5 px-5">
@@ -90,10 +95,8 @@
        <a href="./index.html"><button class="modal-close is-large" aria-label="close"></button></a>
    </div>
       -->
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-  <script src="./assets/js/secretshow.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="./assets/js/secretshow.js"></script> -->
 
 </body>

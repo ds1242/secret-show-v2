@@ -27,7 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-// app.engine('handlebars', hbs.engine);
+app.engine('handlebars', exphbs
+    ({
+        defaultLayout: 'main'
+    }));
 app.set('view engine', 'handlebars');
 
 sequelize.sync({ force: false }).then(() => {
