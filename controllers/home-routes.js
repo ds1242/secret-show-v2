@@ -36,8 +36,33 @@ router.get('/show', (req, res) => {
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
+    });
+});
+
+router.get('/show/:id', (req, res) => {
+    Show.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: {
+                model: User,
+                attributes: ['id']
+            } 
     })
-})
+
+    .then(dbShowData => {
+        const shows = dbShowData.map(show => show.get({ plain: true }));
+
+        res.render('single-show', {
+            shows,
+            loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 router.get('/create-show', (req, res) => {
     res.render('create-show');
