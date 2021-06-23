@@ -75,6 +75,9 @@ router.get('/show/:id', (req, res) => {
 });
 
 router.get('/create-show', (req, res) => {
+    if(!req.session.loggedIn) {
+        res.redirect('/')
+    }
     res.render('create-show');
 });
 
