@@ -6,15 +6,18 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
-
+const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const sessSecret = uuidv4();
+console.log(sessSecret);
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
-    secret: 'super secret string',
+    secret: sessSecret,
     cookie: {
         maxAge: 1 * 30 * 60 * 1000
     },
