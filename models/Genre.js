@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Genre extends Model{};
+class Genre extends Model { };
 
 Genre.init(
     {
@@ -11,10 +11,10 @@ Genre.init(
             primaryKey: true,
             autoIncrement: true
         },
-        genre: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
+        // genre: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // }
     },
     {
         sequelize,
