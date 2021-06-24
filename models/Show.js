@@ -38,6 +38,10 @@ Show.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        show_date: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         privacy: {
             type: DataTypes.STRING,
             allowNull: false
@@ -49,23 +53,7 @@ Show.init(
                 model: 'user',
                 key: 'id'
             }
-        },
-        // band_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true,
-        //     references: {
-        //         model: 'band',
-        //         key: 'id'
-        //     }
-        // },
-        // genre_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'genre',
-        //         key: 'id'
-        //     }
-        // }
+        }
     },
     {
         sequelize,

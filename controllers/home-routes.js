@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Role, Show, User, Genre, Comment, Band } = require('../models');
+const { Show, User, Comment, Band } = require('../models');
 
 // The below, as uncommented, when logged in, can no longer to to main page, only /show. Commented out, you can visit homepage or show page just fine
 router.get('/', (req, res) => {

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Comment, Band, Show, Genre } = require('../../models');
+const { User, Comment, Band, Show} = require('../../models');
 
 // Find all shows
 router.get('/', (req, res) => {
@@ -39,6 +39,7 @@ router.post('/', (req, res) => {
         youtube_id: req.body.youtube_id,
         show_location: req.body.show_location,
         show_time: req.body.show_time,
+        show_date: req.body.show_date,
         privacy: req.body.privacy,
         user_id: req.session.user_id
     })
