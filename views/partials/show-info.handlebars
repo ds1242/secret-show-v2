@@ -1,0 +1,19 @@
+<article class="show">
+    <div class="bandname">
+        <a href="/show/{{id}}">{{bandname}}</a>
+    </div>
+    <div>
+        <h1> From the Partial</h1>
+        At {{show_time}}
+    </div>
+
+</article>
+
+<h3>Leave a Comment </h3>
+<div id="comment">
+    <input type="text" value={{id}} id="show-id" hidden />
+    <textarea rows="5" id="comment_text"></textarea>
+    <button id="btnComment">Comment On</button>
+</div>
+
+<script src="../js/postcomment.js"></script>

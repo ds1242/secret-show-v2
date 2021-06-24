@@ -6,97 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"> -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Secret Show</title>
 </head>
 
 <body>
-
-
     <header id="header">
-        <a href="./index.html"><img id="reflect" src="./images/Secret show01-01.png" alt="Secret Show"></a>
 
+
+        {{#if loggedIn}}
+        {{!-- <h1>You are logged in</h1> --}}
+        <a href="/show">
+            <img id="reflect" src="/images/Secret_Show_glow.png" alt="Secret Show">
+        </a>
+        {{else}}
+        {{!-- <h1>Not logged in</h1> --}}
+        <a href="/">
+            <img id="reflect" src="/images/Secret show01-01.png" alt="Secret Show">
+        </a>
+        {{/if}}
     </header>
 
-    {{!-- <article>
-        <div id="login">
-            <p>Login to join</p>
-            <input id="username" placeholder="Username">
-            <input id="password" placeholder="Password">
+    {{{ body }}}
+
+
+    <footer>
+        <div>
+            <p>
+                &#169;SecretShowV2 2021
+            </p>
+
         </div>
-
-        <button id="join">Join</button>
-
-    </article> --}}
-
-    <div class="container">
-        {{{body}}}
-    </div>
+    </footer>
 
 
-    <!-- like buttons
-    <div class="likeReturnBtns">
-        <section id="like-rock-container" style="display: none;">
-            <input id="like-rock" type="image" src="assets\images\like btn before.png" class="likeBtn">
-            <div id="like-rock-counter"></div>
-            <a href="https://www.bettycrocker.com/recipes/electric-guitar-cake/11f9e698-0220-4993-997a-967c4112d34c"><button class="return-btn">Buy Tickets Now!</button></a>
-            <br>
-            <a href="./index.html"><button>Return to Genre</button></a>
-        </section>
-        <section id="like-folk-container" style="display: none;">
-            <input id="like-folk" type="image" src="assets\images\like btn before.png" class="likeBtn">
-            <div id="like-folk-counter"></div>
-            <a href="https://www.bettycrocker.com/recipes/electric-guitar-cake/11f9e698-0220-4993-997a-967c4112d34c"><button>Buy Tickets Now!</button></a>
-            <br>
-            <a href="./index.html"><button>Return to Genre</button></a>
-        </section>
-        <section id="like-indie-container" style="display: none;">
-            <input id="like-indie" type="image" src="assets\images\like btn before.png" class="likeBtn">
-            <div id="like-indie-counter"></div>
-            <a href="https://www.bettycrocker.com/recipes/electric-guitar-cake/11f9e698-0220-4993-997a-967c4112d34c"><button>Buy Tickets Now!</button></a>
-            <br>
-            <a href="./index.html"><button>Return to Genre</button></a>
-        </section>
-        <section id="like-dance-container" style="display: none;">
-            <input id="like-dance" type="image" src="assets\images\like btn before.png" class="likeBtn">
-            <div id="like-dance-counter"></div>
-            <a href="https://www.bettycrocker.com/recipes/electric-guitar-cake/11f9e698-0220-4993-997a-967c4112d34c"><button>Buy Tickets Now!</button></a>
-            <br>
-            <a href="./index.html"><button>Return to Genre</button></a>
-        </section> 
-    </div> -->
-
-    <section>
-        <footer>
-            <div>
-                <p>
-                    &#169;SecretShowV2 2021
-                </p>
-                <!-- <p>
-                     <a href="https://github.com/dante-poe">Sage</a>
-                     <a href="https://github.com/Ali-Mitchell">Ali</a>
-                     <a href="https://github.com/mandahos">Amanda</a>
-                     <a href="https://github.com/scochran31">Shawn</a>
-                 </p> -->
-            </div>
-        </footer>
-    </section>
-
-    <!-- modals
-   <div class="modal">
-       <div class="modal-background"></div>
-       <div class="modal-content has-background-white py-5 px-5">
-         <h3 class="title mb-6" id="modalGenre"></h3>
-         <div id="modal-img"></div>
-         <div class="modalBtn" >
-             <button type="submit" id="modalBtn">Listen Now!</button>
-         </div>
-       </div>
-       <a href="./index.html"><button class="modal-close is-large" aria-label="close"></button></a>
-   </div>
-      -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- <script src="./assets/js/secretshow.js"></script> -->
+
+    {{!--
+    <script src="/js/landing.js"></script> --}}
 
 </body>

@@ -1,11 +1,13 @@
 console.log("load show detail");
+var showid;
 
-fetch('/api/shows', {
+fetch('/api/show', {
     method: 'GET',
     headers: { 'content-type': 'application/json' }
 }).then(response => response.json())
     .then(data => {
         console.log('Success:', data);
+        showid = data[0].id;
     })
     .catch((error) => {
         console.log('error:', error)
@@ -18,12 +20,13 @@ const postComment = () => {
     // var showName = "BB"; 
     var commentDetails = {
         commentText: document.getElementById('comment_text').value,
-        showName: 'BB',
+        show_id: showid
     }
+    console.log(commentDetails);
 
-    fetch('/comments', {
+    fetch('/api/show/comment', {
         method: 'POST',
-        header: 'Content',
+        headers: { 'content-type': 'application/json' },
         body: JSON.stringify(commentDetails)
     });
 }

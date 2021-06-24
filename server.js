@@ -4,6 +4,9 @@ const routes = require('./controllers');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
+
 require('dotenv').config();
 
 const app = express();
@@ -27,12 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-app.engine('handlebars', exphbs
-    ({
-        defaultLayout: 'main'
-    }));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now Listenting on ${PORT}`));
+sequelize.sync({ force: true }).then(() => {
+    app.listen(PORT, () => console.log(`Now Listening on, http://localhost:${PORT}`));
+
 });
