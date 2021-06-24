@@ -62,10 +62,18 @@ router.get('/show/:id', (req, res) => {
             return;
         }
         const show = dbShowSingleData.get({ plain: true });
-
+        if (req.session.countVisit) {
+            req.session.countVisit++;
+            req.session.firstTime = false;
+          } else {
+            req.session.countVisit = 1;
+            req.session.firstTime = true;
+        }
         res.render('single-show', {
             show,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            countVisit: req.session.countVisit,
+            firstTime: req.session.firstTime
         });
     })
     .catch(err => {
