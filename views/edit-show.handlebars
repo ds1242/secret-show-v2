@@ -1,0 +1,36 @@
+<form class="edit-show-form">
+    <article>
+        {{!-- Styling will need to be fixed --}}
+        <div id="create">
+            <p>Edit Your Show</p>
+            <input type="text" id="band-name" placeholder="Band Name" value="{{show.bandname}}">
+            <select id="genres" placeholder="Select your genre">
+                <option>{{show.genre}}</option>
+                <option value="Rock">Rock</option>
+                <option value="Bluegrass">Bluegrass</option>
+                <option value="Country">Country</option>
+                <option value="RnB">R & B</option>
+                <option value="HipHop">Hip Hop</option>
+                <option value="EDM">EDM</option>
+                <option value="Metal">Metal</option>
+            </select>
+            <input type="text" id="image-url" placeholder="Band Image" value="{{show.img}}">
+            <input type="text" id="youtube" placeholder="Youtube Link" value="{{show.youtube_id}}">
+            <input type="text" id="location" placeholder="Show Address" value="{{show.show_location}}">
+            <input type="text" id="time" placeholder="Show Time" value="{{show.show_time}}">
+            <input type="text" id="show-date" placeholder="Show Date" value="{{show.show_date}}">
+            <select id="privacy" placeholder="Public or Private?">
+                <option>{{show.privacy}}</option>
+                <option value="Public">Public</option>
+                <option value="Private">Private</option>
+            </select>
+        </div>
+
+        {{!-- "login-join-btn" is the styling of all of our buttons --}}
+        <button type="submit" class="login-join-btn" id="submit-edit-show-btn">Submit Changes</button>
+        <button type="submit" class="login-join-btn" id="delete-show-btn">Delete Show</button>
+    </article>
+</form>
+
+<script src="/js/edit-show.js"></script>
+<script src="/js/delete-show.js"></script>
