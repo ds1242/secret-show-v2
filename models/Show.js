@@ -46,6 +46,11 @@ Show.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        view_count: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: "0"
+        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

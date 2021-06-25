@@ -10,10 +10,10 @@
             <li>{{show.user_id}}</li>
             <li>{{show.privacy}}</li>
             <li><img src="{{show.img}}" alt="band image" width="250"></li>
-            <iframe id="ytplayer" type="text/html" width="640" height="360"
+            {{!-- <iframe id="ytplayer" type="text/html" width="640" height="360"
                 src="https://www.youtube.com/embed/{{show.youtube_id}}" frameborder="0"></iframe>
             <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
-                src="https://www.google.com/maps/embed/v1/search?q={{show.show_location}}&key=AIzaSyC0xNWjG2KCIBjE-UTvSZ0UIA8cfTCSc8U"></iframe>
+                src="https://www.google.com/maps/embed/v1/search?q={{show.show_location}}&key=AIzaSyC0xNWjG2KCIBjE-UTvSZ0UIA8cfTCSc8U"></iframe> --}}
         </ol>
     </div>
 
@@ -27,8 +27,8 @@
 
 <div id="page-counter">
     <h2>Page Views: </h2>
-    <h2 id="page-count">{{countVisit}}</h2>
+    <h2 id="page-count">{{show.view_count}}</h2>
 </div>
 
-
+<script src="/js/view-count.js"></script>
 {{!-- <script src='/js/back-button.js'></script> --}}

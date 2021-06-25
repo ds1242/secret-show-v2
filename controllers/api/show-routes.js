@@ -62,6 +62,7 @@ router.put('/:id', (req, res) => {
         show_time: req.body.show_time,
         show_date: req.body.show_date,
         privacy: req.body.privacy,
+        view_count: req.body.view_count,
         user_id: req.session.user_id
     },
         {

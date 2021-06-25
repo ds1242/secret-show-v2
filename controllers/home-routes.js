@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Show, User, Comment, Band } = require('../models');
+const { Show, User, Comment, Band } = require('../models')
 
 // The below, as uncommented, when logged in, can no longer to to main page, only /show. Commented out, you can visit homepage or show page just fine
 router.get('/', (req, res) => {
@@ -61,15 +61,16 @@ router.get('/show/:id', (req, res) => {
                 return;
             }
             const show = dbShowSingleData.get({ plain: true });
-            if (req.session.countVisit) {
-                // If the 'countVisit' session variable exists, increment it by 1 and set the 'firstTime' session variable to 'false'
-                req.session.countVisit++;
-                req.session.firstTime = false;
-            } else {
-                // If the 'countVisit' session variable doesn't exist, set it to 1 and set the 'firstTime' session variable to 'true'
-                req.session.countVisit = 1;
-                req.session.firstTime = true;
-            }
+
+            // if (req.session.countVisit) {
+            //     // If the 'countVisit' session variable exists, increment it by 1 and set the 'firstTime' session variable to 'false'
+            //     req.session.countVisit++;
+            //     req.session.firstTime = false;
+            // } else {
+            //     // If the 'countVisit' session variable doesn't exist, set it to 1 and set the 'firstTime' session variable to 'true'
+            //     req.session.countVisit = 1;
+            //     req.session.firstTime = true;
+            // }
             res.render('single-show', {
                 show,
                 loggedIn: req.session.loggedIn,
