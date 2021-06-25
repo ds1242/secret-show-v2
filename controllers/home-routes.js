@@ -71,6 +71,26 @@ router.get('/show/:id', (req, res) => {
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
+    .then(dbShowSingleData => {
+        if(!dbShowSingleData){
+            res.status(404).json({ message: 'No show found with this id' });
+            return;
+        }
+        const show = dbShowSingleData.get({ plain: true });
+        if (req.session.countVisit) {
+            // If the 'countVisit' session variable exists, increment it by 1 and set the 'firstTime' session variable to 'false'
+            req.session.countVisit++;
+            req.session.firstTime = false;
+          } else {
+            // If the 'countVisit' session variable doesn't exist, set it to 1 and set the 'firstTime' session variable to 'true'
+            req.session.countVisit = 1;
+            req.session.firstTime = true;
+          }
+        res.render('single-show', {
+            show,
+            loggedIn: req.session.loggedIn,
+            countVisit: req.session.countVisit,
+            
         });
 });
 
