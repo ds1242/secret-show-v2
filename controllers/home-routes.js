@@ -54,24 +54,7 @@ router.get('/show/:id', (req, res) => {
             model: User,
             attributes: ['id']
         }
-    })
-
-        .then(dbShowSingleData => {
-            if (!dbShowSingleData) {
-                res.status(404).json({ message: 'No show found with this id' });
-                return;
-            }
-            const show = dbShowSingleData.get({ plain: true });
-
-            res.render('single-show', {
-                show,
-                loggedIn: req.session.loggedIn
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        })
+    })       
         .then(dbShowSingleData => {
             if (!dbShowSingleData) {
                 res.status(404).json({ message: 'No show found with this id' });
@@ -93,8 +76,12 @@ router.get('/show/:id', (req, res) => {
                 countVisit: req.session.countVisit,
 
             });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
-
+});
     router.get('/create-show', (req, res) => {
         if (!req.session.loggedIn) {
             res.redirect('/')
@@ -130,6 +117,6 @@ router.get('/show/:id', (req, res) => {
                 res.status(500).json(err);
             });
     });
-});
+
 
 module.exports = router;
