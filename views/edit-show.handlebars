@@ -1,11 +1,11 @@
-<form class="edit-show">
+<form class="edit-show-form">
     <article>
-        {{!-- I've left the same id to allow for styling --}}
+        {{!-- Styling will need to be fixed --}}
         <div id="create">
             <p>Edit Your Show</p>
-            <input type="text" id="band-name" placeholder="Band Name">
+            <input type="text" id="band-name" placeholder="Band Name" value="{{show.bandname}}">
             <select id="genres" placeholder="Select your genre">
-                <option>Select your Genre</option>
+                <option>{{show.genre}}</option>
                 <option value="Rock">Rock</option>
                 <option value="Bluegrass">Bluegrass</option>
                 <option value="Country">Country</option>
@@ -14,13 +14,13 @@
                 <option value="EDM">EDM</option>
                 <option value="Metal">Metal</option>
             </select>
-            <input type="text" id="image-url" placeholder="Band Image">
-            <input type="text" id="youtube" placeholder="Youtube Link">
-            <input type="text" id="location" placeholder="Show Address">
-            <input type="text" id="time" placeholder="Show Time">
-            <input type="text" id="show-date" placeholder="Show Date">
+            <input type="text" id="image-url" placeholder="Band Image" value="{{show.img}}">
+            <input type="text" id="youtube" placeholder="Youtube Link" value="{{show.youtube_id}}">
+            <input type="text" id="location" placeholder="Show Address" value="{{show.show_location}}">
+            <input type="text" id="time" placeholder="Show Time" value="{{show.show_time}}">
+            <input type="text" id="show-date" placeholder="Show Date" value="{{show.show_date}}">
             <select id="privacy" placeholder="Public or Private?">
-                <option>Public or Private?</option>
+                <option>{{show.privacy}}</option>
                 <option value="Public">Public</option>
                 <option value="Private">Private</option>
             </select>
