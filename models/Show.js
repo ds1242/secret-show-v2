@@ -38,6 +38,10 @@ Show.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        show_date: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
         privacy: {
             type: DataTypes.STRING,
             allowNull: false
