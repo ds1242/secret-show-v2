@@ -40,6 +40,7 @@ router.post('/', (req, res) => {
         youtube_id: req.body.youtube_id,
         show_location: req.body.show_location,
         show_time: req.body.show_time,
+        show_date: req.body.show_date,
         privacy: req.body.privacy,
         user_id: req.session.user_id
     })
@@ -61,6 +62,7 @@ router.put('/:id', (req, res) => {
         show_location: req.body.show_location,
         show_time: req.body.show_time,
         privacy: req.body.privacy,
+        show_date: req.body.show_date,
         view_count: req.body.view_count,
         user_id: req.session.user_id
     },

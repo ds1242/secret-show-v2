@@ -27,7 +27,7 @@ router.get('/show', (req, res) => {
             attributes: ['id']
         },
         order: [[
-            'show_time', 'ASC'
+            'show_date', 'ASC'
           ]],
     })
 

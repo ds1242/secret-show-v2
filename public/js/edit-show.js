@@ -7,6 +7,7 @@ async function editShow(event) {
     const youtube_id = document.querySelector('#youtube').value.trim();
     const show_location = document.querySelector('#location').value.trim();
     const show_time = document.querySelector('#time').value.trim();
+    const show_date = document.querySelector('#show-date').value.trim();
     const privacy = document.querySelector('#privacy').value.trim();
     const id = window.location.toString().split("/")[
         window.location.toString().split("/").length - 1]
@@ -23,6 +24,7 @@ async function editShow(event) {
                 youtube_id,
                 show_location,
                 show_time,
+                show_date,
                 privacy
             }),
             headers: { 'Content-type': 'application/json' }
