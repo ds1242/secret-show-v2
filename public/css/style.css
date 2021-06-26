@@ -384,3 +384,121 @@ h3 {
     justify-content: center;
   }
   
+  /* /show  */
+
+  #create-btn a {
+    color:white;
+    text-decoration: none;
+  }
+
+  .find-btn {
+    width: 280px;
+    font-weight: bold;
+  }
+
+  /* create-show */
+
+  #create {
+    width: 275px;
+    margin-top: 75px;
+  }
+
+  #create input {
+    width:100%;
+    padding:8px 0px 8px 20px;
+    border-radius: 12px;
+    border:none;
+    margin: 10px 5px 10px 0px;
+    text-decoration: black;
+  }
+
+  #create input:hover {
+    background-color: lightgray;
+  }
+  #create select {
+    width:100%;
+    padding:8px 0px 8px 20px;
+    border-radius: 12px;
+    border:none;
+    margin: 10px 5px 10px 0px;
+  }
+
+  #create p {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 19px;
+    text-align: center;
+    color: ivory;
+    margin-bottom: 10px;
+    /* margin-left: 5px; */
+    text-align: center;
+  }
+
+  /* show info  */
+
+  .upcoming-shows {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 15px;
+    text-align: center;
+    color: ivory;
+    margin: 20px 0px 10px 0px;
+  }
+
+  .container {
+    width:90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 12px;
+    margin: 10px;
+
+  }
+
+  
+.card-body {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+
+  .card a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .card img {
+    margin-bottom: 5px;
+  }
+
+  .show-details {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+
+ .card-header {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
+
+.card-header p {
+  letter-spacing: 1px;
+  color: black;
+}
+
+.card p {
+  font-size: 12px;
+  color: rgb(85, 85, 85);
+  letter-spacing: 1px;
+}
