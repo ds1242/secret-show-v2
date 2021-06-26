@@ -35,7 +35,7 @@ Show.init(
             allowNull: false
         },
         show_time: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         privacy: {
