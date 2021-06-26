@@ -7,6 +7,7 @@ const session = require('express-session');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 const { v4: uuidv4 } = require('uuid');
+const { truncate, truncateSync } = require('fs');
 require('dotenv').config();
 
 const app = express();
@@ -19,7 +20,7 @@ const sess = {
     secret: sessSecret,
     cookie: {},
     resave: false,
-    saveUninitialized: true,    
+    saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize
     })
@@ -35,7 +36,7 @@ app.use(routes);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log(`Now Listening on, http://localhost:${PORT}`));
 
 });

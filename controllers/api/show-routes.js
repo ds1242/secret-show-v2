@@ -8,12 +8,13 @@ router.get('/', (req, res) => {
             include: {
                 model: User,
                 attributes: ['id']
-            }
+            },
         })
         .then(dbShowData => res.json(dbShowData))
         .catch(err => {
             res.status(500).json({ message: 'Cannot find show' })
         });
+        
 });
 
 router.get('/:id', (req, res) => {
@@ -60,8 +61,9 @@ router.put('/:id', (req, res) => {
         youtube_id: req.body.youtube_id,
         show_location: req.body.show_location,
         show_time: req.body.show_time,
-        show_date: req.body.show_date,
         privacy: req.body.privacy,
+        show_date: req.body.show_date,
+        view_count: req.body.view_count,
         user_id: req.session.user_id
     },
         {

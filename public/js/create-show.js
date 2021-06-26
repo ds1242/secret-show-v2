@@ -6,11 +6,11 @@ async function createShow(event) {
     const youtube_id = document.querySelector('#youtube').value.trim();
     const show_location = document.querySelector('#location').value.trim();
     const show_time = document.querySelector('#time').value.trim();
-    const privacy = document.querySelector('#privacy').value.trim();
     const show_date = document.querySelector('#show-date').value.trim();
+    const privacy = document.querySelector('#privacy').value.trim();
 
 
-    if (bandname && genre && img  && show_location && show_time && show_date && privacy) {
+    if (bandname && genre && img && show_location && show_time && show_date && privacy) {
 
         const response = await fetch('api/show', {
             method: 'post',
