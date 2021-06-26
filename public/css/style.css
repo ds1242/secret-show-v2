@@ -29,7 +29,7 @@ header img {
 
 /* This 'hover' makes the reflection happen */
 #reflect:hover {
-  -webkit-box-reflect: below -55px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.74)));
+  -webkit-box-reflect: below -55px -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 0.25)));
 }
 
 article {
@@ -206,36 +206,13 @@ button {
 h3 {
     text-align: center;
 }
-.modalBtn {
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.likeBtn {
-    height: 50px;
-    width: 50px;
-}
-
-.youtube {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 30px;
-}
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
   
   /* /show  */
 
   #create-btn a {
     color:white;
     text-decoration: none;
+    
   }
 
   .find-btn {
@@ -305,7 +282,7 @@ h3 {
     background-color: white;
     border-radius: 12px;
     margin: 10px;
-
+    box-shadow: 8px 8px 4px rgba(42, 46, 56, 0.65);
   }
 
   
