@@ -20,14 +20,14 @@ Show.init(
             allowNull: false,
         },
         img: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(500),
             allowNull: false,
             validate: {
                 isUrl: true
             }
         },
         youtube_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(500),
             allowNull: true,
         },
         show_location: {
@@ -38,9 +38,18 @@ Show.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        show_date: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         privacy: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        view_count: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: "0"
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -49,23 +58,7 @@ Show.init(
                 model: 'user',
                 key: 'id'
             }
-        },
-        // band_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true,
-        //     references: {
-        //         model: 'band',
-        //         key: 'id'
-        //     }
-        // },
-        // genre_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'genre',
-        //         key: 'id'
-        //     }
-        // }
+        }
     },
     {
         sequelize,

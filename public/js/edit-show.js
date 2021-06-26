@@ -1,4 +1,5 @@
-async function createShow(event) {
+
+async function editShow(event) {
     event.preventDefault()
     const bandname = document.querySelector('#band-name').value.trim();
     const genre = document.querySelector('#genres').value.trim();
@@ -8,12 +9,14 @@ async function createShow(event) {
     const show_time = document.querySelector('#time').value.trim();
     const privacy = document.querySelector('#privacy').value.trim();
     const show_date = document.querySelector('#show-date').value.trim();
+    const id = window.location.toString().split("/")[
+        window.location.toString().split("/").length - 1]
 
 
-    if (bandname && genre && img  && show_location && show_time && show_date && privacy) {
+    if (bandname && genre && img && show_location && show_time && show_date && privacy) {
 
-        const response = await fetch('api/show', {
-            method: 'post',
+        const response = await fetch(`/api/show/${id}`, {
+            method: 'put',
             body: JSON.stringify({
                 bandname,
                 genre,
@@ -28,11 +31,13 @@ async function createShow(event) {
         });
         // console.log(response)
         if (response.ok) {
-            document.location.replace('show')
+            document.location.replace('/show')
         } else {
             alert(response.statusText)
         }
     }
 }
 
-document.querySelector('.create-show').addEventListener('submit', createShow)
+document.querySelector('.edit-show-form').addEventListener('submit', editShow)
+
+
