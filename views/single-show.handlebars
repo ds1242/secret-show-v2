@@ -6,13 +6,19 @@
             <li>{{show.youtube_id}}</li>
             <li>{{show.show_location}}</li>
             <li>{{show.show_time}}</li>
+            <li>{{show.show_date}}</li>
             <li>{{show.user_id}}</li>
             <li>{{show.privacy}}</li>
-            <li>{{show.img}}</li>
+            <li><img src="{{show.img}}" alt="band image" width="250"></li>
+            <iframe id="ytplayer" type="text/html" width="640" height="360"
+                src="https://www.youtube.com/embed/{{show.youtube_id}}" frameborder="0"></iframe>
+            <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps/embed/v1/search?q={{show.show_location}}&key=AIzaSyC0xNWjG2KCIBjE-UTvSZ0UIA8cfTCSc8U"></iframe>
         </ol>
     </div>
 
 </article>
+<button type="submit" class="login-join-btn" id="edit-show-btn">Edit this Show</button>
 
 <h3>Leave a Comment </h3>
 <div id="comment">
@@ -23,3 +29,12 @@
 <button type="submit" class="login-join-btn" id="back-to-show-list">Back to Show List</button>
 
 <script src='/js/back-button.js'></script>
+<script src='/js/edit-button.js'></script>
+
+<div id="page-counter">
+    <h2>Page Views: </h2>
+    <h2 id="page-count">{{show.view_count}}</h2>
+</div>
+
+<script src="/js/view-count.js"></script>
+{{!-- <script src='/js/back-button.js'></script> --}}
