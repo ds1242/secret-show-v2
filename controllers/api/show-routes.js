@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Comment, Band, Show } = require('../../models');
 
-// Find all shows
+// Find all shows "/api/show"
 router.get('/', (req, res) => {
     Show.findAll(
         {
@@ -122,11 +122,13 @@ router.get('/comment/:showID', (req, res) => {
 //creating a new comment for the show "/api/show/comments"
 router.post('/comment', (req, res) => {
     console.log("creating a comment for a show", req.body);
+    const newComment = { ...req.body, user_id: req.session.user_id };
+    console.log(newComment)
     //user_id: session.username
-    Comment.create({ ...req.body, user_id: req.session.user_id })
+    Comment.create(newComment)
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
-            res.status(500).json({ message: 'Cannot add comments for the show' })
+            res.status(500).json({ message: 'Cannot add comments for the show', err })
         });
 
 });

@@ -16,6 +16,15 @@
                 src="https://www.google.com/maps/embed/v1/search?q={{show.show_location}}&key=AIzaSyC0xNWjG2KCIBjE-UTvSZ0UIA8cfTCSc8U"></iframe>
         </ol>
     </div>
+    <div>
+        Display COmments for the Show
+        {{allComments}}
+        <ol id="display-allcomments">
+            {{!-- {{#each comments as |comment|}}
+            <li>{{comment.comment_text}}</li>
+            {{/each}} --}}
+        </ol>>
+    </div>
 
 </article>
 <button type="submit" class="login-join-btn" id="edit-show-btn">Edit this Show</button>
@@ -37,4 +46,6 @@
 </div>
 
 <script src="/js/view-count.js"></script>
-{{!-- <script src='/js/back-button.js'></script> --}}
+{{!--
+<script src='/js/back-button.js'></script> --}}
+<script src="../js/postcomment.js"></script>

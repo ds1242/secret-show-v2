@@ -8,10 +8,27 @@ fetch('/api/show', {
     .then(data => {
         console.log('Success:', data);
         showid = data[0].id;
+
+        if (showid !== undefined) {
+            //Display all comments for the show 
+            fetch('/api/show/comment/' + showid, {
+                method: 'GET',
+                headers: { 'content-type': 'application/json' }
+            }).then(response => response.json())
+                .then(allComments => {
+                    console.log('all comments:', allComments);
+                })
+                .catch((error) => {
+                    console.log('error:', error)
+                });
+        }
     })
     .catch((error) => {
         console.log('error:', error)
     });
+
+
+
 
 var btnComment = document.getElementById('btnComment');
 
@@ -19,7 +36,7 @@ const postComment = () => {
     // var commentText = document.getElementById('comment_text').value;
     // var showName = "BB"; 
     var commentDetails = {
-        commentText: document.getElementById('comment_text').value,
+        comment_text: document.getElementById('comment_text').value,
         show_id: showid
     }
     console.log(commentDetails);
