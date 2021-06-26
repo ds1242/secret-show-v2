@@ -17,9 +17,7 @@ const sessSecret = uuidv4();
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
     secret: sessSecret,
-    cookie: {
-        maxAge: 1 * 30 * 60 * 1000
-    },
+    cookie: {},
     resave: false,
     saveUninitialized: true,    
     store: new SequelizeStore({
@@ -37,7 +35,7 @@ app.use(routes);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now Listening on, http://localhost:${PORT}`));
 
 });
