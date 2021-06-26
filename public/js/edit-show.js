@@ -13,7 +13,7 @@ async function editShow(event) {
         window.location.toString().split("/").length - 1]
 
 
-    if (bandname && genre && img && show_location && show_time && privacy) {
+    if (bandname && genre && img && show_location && show_time && show_date && privacy) {
 
         const response = await fetch(`/api/show/${id}`, {
             method: 'put',

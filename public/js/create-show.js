@@ -10,7 +10,7 @@ async function createShow(event) {
     const privacy = document.querySelector('#privacy').value.trim();
 
 
-    if (bandname && genre && img  && show_location && show_time && privacy) {
+    if (bandname && genre && img && show_location && show_time && show_date && privacy) {
 
         const response = await fetch('api/show', {
             method: 'post',
