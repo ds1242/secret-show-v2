@@ -130,12 +130,46 @@ article {
     height:50px;
 }
 
+.create-btn {
+  width: 280px;
+  height: 100px;
+  font-weight: bold;
+  margin:0px 0px 0px 0px;
+  padding: 10px 0px 20px 0px;
+}
+
+.create-btn a {
+  font-size: 20px;
+}
+
+.create-btn p {
+  font-size: 8px;
+  letter-spacing: 5px;
+}
+
+.create-btn:hover {
+  width:285px;
+  height:105px;
+  padding-bottom:25px
+}
+
+.spacer {
+  height: 100px;
+}
+
 footer {
     /* background-image: linear-gradient(to right, #21409a, #e24c7c); */
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 100px; */
+      position: fixed;
+      left: 0;
+      height:75px;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
 }
 
 footer p {
@@ -195,193 +229,6 @@ h3 {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  }
-  
-
-  /* Styling for MapBox */
-
-  /* The page is split between map and sidebar - the sidebar gets 1/3, map
-  gets 2/3 of the page. You can adjust this to your personal liking. */
-
-  #mapbox-container {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    margin: 0 auto;
-   padding-top: 20px;
-    width: 90%;
-  
-  }
-  .sidebar {
-    /* position: absolute; */
-    width: 25%;
-    display: flex;
-
-    /* height: 50%;
-    top: 25%;
-    left: 0;
-    overflow: hidden; */
-    /* border-right: 1px solid rgba(0, 0, 0, 0.25); */
-  }
-
-  .map {
-    /* position: absolute; */
-    /* left: 25%; */
-    /* padding-left: 10px; */
-    /* width: 75%; */
-    height: 400px;
-    width:350px;
-    /* bottom: 0%; */
-   
-  }
-
-  .mapboxgl-canvas {
-    height: 50%;
-  }
-
-  .heading {
-    /* background: #fff; */
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    height: 80px;
-    /* line-height: 60px; */
-    padding: 0 10px;
-    display: flex;
-    align-content: center;
-  }
-
-  .heading h1 {
-    display: flex;
-    align-self: center;
-
-  }
-
-  .listings {
-    height: 100%;
-    overflow: auto;
-    padding-bottom: 20px;
-  }
-  
-  .listings .item {
-    display: block;
-    border-bottom: 1px solid #eee;
-    padding: 10px;
-    text-decoration: none;
-  }
-  
-  .listings .item:last-child { border-bottom: none; }
-  
-  .listings .item .title {
-    font-size: 20px;
-    color: #e42c7c;
-    font-weight: 700;
-  }
-  
-  .listings .item .title small { font-weight: 400; }
-  
-  .listings .item.active .title,
-  .listings .item .title:hover { color: #21409a; }
-  
-  .listings .item.active {
-    background-color: #f8f8f8;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-    border-left: 0;
-    background: rgba(0, 0, 0, 0.1);
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: none;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #21409a;
-    border-radius: 0;
-  }
-  
-  .clearfix { display: block; }
-  
-  .clearfix::after {
-    content: '.';
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-  }
-
-  .mapboxgl-popup-close-button {
-    display: none;
-  }
-  
-  .mapboxgl-popup-content {
-    font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-    padding: 0;
-    width: 180px;
-  }
-  
-  .mapboxgl-popup-content-wrapper {
-    padding: 1%;
-  }
-  
-  .mapboxgl-popup-content h3 {
-    background: #21409a;
-    color: #fff;
-    margin: 0;
-    display: block;
-    padding: 10px;
-    border-radius: 3px 3px 0 0;
-    font-weight: 700;
-    margin-top: -15px;
-  }
-  
-  .mapboxgl-popup-content h4 {
-    margin: 0;
-    display: block;
-    padding: 10px;
-    font-weight: 400;
-  }
-  
-  .mapboxgl-popup-content div {
-    padding: 10px;
-  }
-  
-  .mapboxgl-container .leaflet-marker-icon {
-    cursor: pointer;
-  }
-  
-  .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
-    margin-top: 15px;
-  }
-  
-  .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
-    border-bottom-color: #21409a;
-  }
-
-  .marker {
-    border: none;
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    background-image: url(../images/guitar-solid.svg);
-    background-color: #e42c7c;
-  }
-
-  .mapboxgl-popup {
-    padding-bottom: 50px;
-  }
-
-  p {
-    text-align: center;
-    color: rgb(192, 190, 190);
-  }
-  
-  .likeReturnBtns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   
   /* /show  */
@@ -484,6 +331,10 @@ h3 {
     letter-spacing: 2px;
   }
 
+  .show-details:hover {
+    color: rgb(167, 167, 167);
+  }
+
 
  .card-header {
    width: 100%;
@@ -501,4 +352,67 @@ h3 {
   font-size: 12px;
   color: rgb(85, 85, 85);
   letter-spacing: 1px;
+}
+
+/* single-show handlebar styling  */
+.single-show {
+  text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 15px;
+    text-align: center;
+    color: ivory;
+    margin: 20px 0px 10px 0px;
+}
+
+.show-info {
+  width:275px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.show-info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.show-info img {
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+
+}
+
+#ytplayer {
+  /* width: 300px;
+  height: 225px; */
+  width:100%;
+  height: 250px;
+  margin-bottom: 10px;
+}
+
+#google {
+  width:100%;
+  height: 250px;
+}
+
+.show-info li {
+  padding: 5px 0px 5px 0px;
+}
+
+.show-info h1 {
+  font-size: 30px;
+  letter-spacing: 6px;
+}
+
+.show-info h2 {
+  display: inline;
+  font-size: 12px;
+}
+
+#page-count {
+  margin-bottom: 20px;
 }
