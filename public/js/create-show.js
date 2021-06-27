@@ -32,6 +32,8 @@ async function createShow(event) {
         } else {
             alert(response.statusText)
         }
+    } else {
+        alert('Unable to create a show.  Please ensure all required fields are completed.')
     }
 }
 
