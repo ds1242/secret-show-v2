@@ -67,6 +67,16 @@ router.get('/show/:id', (req, res) => {
             }
             const show = dbShowSingleData.get({ plain: true });
 
+            // console.log("displaying comments for a particular show/band");
+
+            // Comment.findAll({
+            //     where: { show_id: req.params.showID }
+            // })
+            //     .then(dbCommentData => res.json(dbCommentData))
+            //     .catch(err => {
+            //         res.status(500).json({ message: 'Cannot find comments for the show' })
+            //     });
+
             res.render('single-show', {
                 show,
                 apiKey,
