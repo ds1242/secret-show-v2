@@ -26,45 +26,32 @@
                     src="https://www.google.com/maps/embed/v1/search?q={{show.show_location}}&key={{apiKey}}"></iframe>
             </ul>
     </div>
-    <div>
-        Display COmments for the Show
-        {{allComments}}
-        <ol id="display-allcomments">
-            {{!-- {{#each comments as |comment|}}
-            <li>{{comment.comment_text}}</li>
-            {{/each}} --}}
-        </ol>>
-    </div>
+
 
     <button type="submit" class="login-join-btn" id="edit-show-btn">Edit this Show</button>
 
     <button type="submit" class="login-join-btn" id="back-to-show-list">Back to Show List</button>
+
+
+    {{!-- comments section --}}
+    <div=class"parent-comment">
+        <div class="comments">
+            <h2>Comments </h2><br>
+            {{allComments}}
+            <ul id="display-allcomments">
+            </ul><br>
+        </div>
+        <div class="comments" id="comment">
+            <h2>Leave a Comment </h2><br>
+            <textarea rows="5" id="comment_text"></textarea><br>
+            <button id="btnComment" class="login-join-btn">Submit Comment</button>
+        </div>
+    </div>
 
 
 </article>
-{{!--
-<article class="interface">
-    <button type="submit" class="login-join-btn" id="edit-show-btn">Edit this Show</button>
-
-    <button type="submit" class="login-join-btn" id="back-to-show-list">Back to Show List</button>
-</article> --}}
-
-
-<h3>Leave a Comment </h3>
-<div id="comment">
-    <textarea rows="5" id="comment_text"></textarea>
-    <button id="btnComment">Submit Comment</button>
-</div>
-
-<button type="submit" class="login-join-btn" id="back-to-show-list">Back to Show List</button>
-
 
 <script src='/js/back-button.js'></script>
 <script src='/js/edit-button.js'></script>
 <script src="../js/postcomment.js"></script>
 <script src="/js/view-count.js"></script>
-
-
-
-
-
