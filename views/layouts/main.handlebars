@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"> -->
     <link rel="stylesheet" href="/css/style.css">
-    {{!--
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    --}}
+
+    {{!-- datepicker --}}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    {{!-- <link rel="stylesheet" href="/resources/demos/style.css"> --}}
+
+     {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
     <title>Secret Show</title>
 </head>
 
@@ -33,21 +35,45 @@
 
     {{{ body }}}
 
-
+    <div class="spacer"></div>
+    {{#if loggedIn}}
     <footer>
-        <div>
-            <p>
-                &#169;SecretShowV2 2021
-            </p>
 
-        </div>
+        <form class='create-form-btn'>
+            <article>
+                <button type="click" class="create-btn" id="create-btn">
+                    <a href="/create-show">Create a Show</a>
+                    <br></br>
+                    <p>
+                            &#169;SecretShowV2 2021
+                    </p>    
+                </button>
+            </article>
+        </form>
+                
     </footer>
+    {{else}}
+    <footer>
+        <p>
+            &#169;SecretShowV2 2021 
+        </p>
+    </footer>
+    {{/if}}
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {{!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> --}}
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    {{!--
-    <script src="/js/landing.js"></script> --}}
+
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+    
+    {{!-- <script src="/js/landing.js"></script> --}}
+
 
 </body>

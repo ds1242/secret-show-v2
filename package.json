@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",
     "express-session": "^1.17.2",
+    "handlebars-helper-formatdate": "^1.0.0",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2",
     "uuid": "^8.3.2"

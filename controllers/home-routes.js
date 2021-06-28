@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Show, User, Comment, Band } = require('../models');
+require('dotenv').config();
 
 // The below, as uncommented, when logged in, can no longer to to main page, only /show. Commented out, you can visit homepage or show page just fine
 router.get('/', (req, res) => {
@@ -25,7 +26,10 @@ router.get('/show', (req, res) => {
         include: {
             model: User,
             attributes: ['id']
-        }
+        },
+        order: [[
+            'show_date', 'ASC'
+        ]],
     })
 
         .then(dbShowData => {
@@ -43,6 +47,7 @@ router.get('/show', (req, res) => {
 });
 
 router.get('/show/:id', (req, res) => {
+    const apiKey = process.env.Map_API
     if (!req.session.loggedIn) {
         res.redirect('/')
     }
@@ -74,6 +79,7 @@ router.get('/show/:id', (req, res) => {
 
             res.render('single-show', {
                 show,
+                apiKey,
                 loggedIn: req.session.loggedIn,
 
             });
