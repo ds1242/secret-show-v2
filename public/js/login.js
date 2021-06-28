@@ -21,7 +21,7 @@ async function loginHandler(event) {
             console.log(password)
             document.location.replace('show')
         } else {
-            alert(response.statusText)
+            alert(response.statusText + ': Unable to login.  Ensure username and password are correct')
         }
     }
 }
