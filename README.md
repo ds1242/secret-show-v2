@@ -8,7 +8,7 @@ SECRET SHOW lets you and your band create your shows on your own dashboard, uplo
 Link to <a href="https://secret-show.herokuapp.com/">SECRET SHOW</a> , let the music begin!
 
 
-<img src="https://github.com/CastroOlympias/Tech-Blog/blob/main/media/Tech-Blog%20Gif.gif"/>
+<img src="https://github.com/ds1242/secret-show-v2/blob/fix-date/media/Secret_Show_gif.gif"/>
 
 ## Table of Contents
 - [Story](#Story)
