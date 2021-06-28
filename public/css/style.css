@@ -393,3 +393,18 @@ h3 {
 #page-count {
   margin-bottom: 20px;
 }
+
+#display-allcomments {
+list-style: none;
+}
+
+/* .parent-comment{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+/* .comments {
+  display: flex;
+
+} */ 
