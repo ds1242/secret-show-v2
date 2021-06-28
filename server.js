@@ -7,6 +7,7 @@ const session = require('express-session');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 const { v4: uuidv4 } = require('uuid');
+
 require('dotenv').config();
 
 const app = express();
@@ -19,7 +20,7 @@ const sess = {
     secret: sessSecret,
     cookie: {},
     resave: false,
-    saveUninitialized: true,    
+    saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize
     })

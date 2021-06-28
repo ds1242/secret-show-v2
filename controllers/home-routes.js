@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Show, User, Comment, Band } = require('../models');
+require('dotenv').config();
 
 // The below, as uncommented, when logged in, can no longer to to main page, only /show. Commented out, you can visit homepage or show page just fine
 router.get('/', (req, res) => {
@@ -25,7 +26,10 @@ router.get('/show', (req, res) => {
         include: {
             model: User,
             attributes: ['id']
-        }
+        },
+        order: [[
+            'show_date', 'ASC'
+        ]],
     })
 
         .then(dbShowData => {
@@ -43,6 +47,7 @@ router.get('/show', (req, res) => {
 });
 
 router.get('/show/:id', (req, res) => {
+    const apiKey = process.env.Map_API
     if (!req.session.loggedIn) {
         res.redirect('/')
     }
@@ -54,7 +59,7 @@ router.get('/show/:id', (req, res) => {
             model: User,
             attributes: ['id']
         }
-    })       
+    })
         .then(dbShowSingleData => {
             if (!dbShowSingleData) {
                 res.status(404).json({ message: 'No show found with this id' });
@@ -62,8 +67,19 @@ router.get('/show/:id', (req, res) => {
             }
             const show = dbShowSingleData.get({ plain: true });
 
+            // console.log("displaying comments for a particular show/band");
+
+            // Comment.findAll({
+            //     where: { show_id: req.params.showID }
+            // })
+            //     .then(dbCommentData => res.json(dbCommentData))
+            //     .catch(err => {
+            //         res.status(500).json({ message: 'Cannot find comments for the show' })
+            //     });
+
             res.render('single-show', {
                 show,
+                apiKey,
                 loggedIn: req.session.loggedIn,
 
             });
@@ -73,41 +89,41 @@ router.get('/show/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-    router.get('/create-show', (req, res) => {
-        if (!req.session.loggedIn) {
-            res.redirect('/')
+router.get('/create-show', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/')
+    }
+    res.render('create-show');
+});
+
+router.get('/edit-show/:id', (req, res) => {
+    Show.findOne({
+        where: {
+            id: req.params.id
+        },
+        include: {
+            model: User,
+            attributes: ['id']
         }
-        res.render('create-show');
-    });
+    })
 
-    router.get('/edit-show/:id', (req, res) => {
-        Show.findOne({
-            where: {
-                id: req.params.id
-            },
-            include: {
-                model: User,
-                attributes: ['id']
+        .then(dbShowSingleData => {
+            if (!dbShowSingleData) {
+                res.status(404).json({ message: 'No show found with this id' });
+                return;
             }
-        })
+            const show = dbShowSingleData.get({ plain: true });
 
-            .then(dbShowSingleData => {
-                if (!dbShowSingleData) {
-                    res.status(404).json({ message: 'No show found with this id' });
-                    return;
-                }
-                const show = dbShowSingleData.get({ plain: true });
-
-                res.render('edit-show', {
-                    show,
-                    loggedIn: req.session.loggedIn
-                });
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
+            res.render('edit-show', {
+                show,
+                loggedIn: req.session.loggedIn
             });
-    });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 
 module.exports = router;

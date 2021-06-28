@@ -22,7 +22,8 @@ async function signupHandler(event) {
             console.log(password)
             document.location.replace('show');
         } else {
-            alert(response.statusText);
+            alert(response.statusText + ': Ensure the email is unique and the password is longer than 6 characters');
+            
         }
     }
 }
