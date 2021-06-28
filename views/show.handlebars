@@ -1,0 +1,31 @@
+{{#if shows.length}}
+<article class="upcoming-shows">
+    <h2>Upcoming Shows</h2>
+    <section class="container">
+        {{!-- <ol> --}}
+            {{#each shows as |show|}}
+            {{!-- <li> --}}
+                {{> show-info show}}
+                {{!-- </li> --}}
+            {{/each}}
+            {{!-- </ol> --}}
+    </section>
+</article>
+{{/if}}
+
+{{!-- <form class='create-form-btn'>
+    <article>
+        <button type="click" class="login-join-btn" id="create-btn">
+            <a href="/create-show">Create a Show</a>
+        </button>
+    </article>
+</form> --}}
+<form class='logout-form'>
+    <article>
+        <button type="click" class="login-join-btn" id="logout-btn">Logout</button>
+    </article>
+</form>
+
+
+<script src='/js/create-show.js'></script>
+<script src='/js/logout.js'></script>

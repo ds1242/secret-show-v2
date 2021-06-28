@@ -1,0 +1,21 @@
+
+
+
+    <article class="card">
+        
+        <div class="card-body">
+            <img src="{{img}}" alt="band image" width="250">
+
+            <div class="card-header">
+                    <a class="bandname" href="/show/{{id}}">{{bandname}}</a>
+                    {{!-- actually use the handlebars --}}
+                    <p>{{format_date show_date}}</p>
+            </div>
+                <p>{{show_location}}</p>
+                <p>Time: {{show_time}} </p>
+                <a class="show-details" href="/show/{{id}}">view show details....</a>
+        </div>
+
+    </article>
+
+  <script src="../js/postcomment.js"></script> 
