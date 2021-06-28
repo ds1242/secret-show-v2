@@ -6,14 +6,14 @@
         <h1>{{show.bandname}}</h2>
             <div id="page-counter">
                 <h2>Page Views: </h2>
-                <h2 id="page-count">{{countVisit}}</h2>
+                <h2 id="page-count">{{show.view_count}}</h2>
             </div>
             <br></br>
             <ul>
                 <li>{{show.genre}} Music</li>
                 <li>{{show.show_location}}</li>
                 <li>{{show.show_time}}</li>
-                <li>{{show.show_date}}</li>
+                <li>{{format_date show.show_date}}</li>
                 {{!-- <li>{{show.user_id}}</li>
                 <li>{{show.privacy}}</li> --}}
                 <img src="{{show.img}}" alt="band image"></img>

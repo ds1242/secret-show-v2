@@ -6,7 +6,7 @@ async function createShow(event) {
     const youtube_id = document.querySelector('#youtube').value.trim();
     const show_location = document.querySelector('#location').value.trim();
     const show_time = document.querySelector('#time').value.trim();
-    const show_date = document.querySelector('#show-date').value.trim();
+    const show_date = document.querySelector('#datepicker').value.trim();
     const privacy = document.querySelector('#privacy').value.trim();
 
 
@@ -32,6 +32,8 @@ async function createShow(event) {
         } else {
             alert(response.statusText)
         }
+    } else {
+        alert('Unable to create a show.  Please ensure all required fields are completed.')
     }
 }
 
