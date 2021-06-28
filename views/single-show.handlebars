@@ -26,6 +26,15 @@
                     src="https://www.google.com/maps/embed/v1/search?q={{show.show_location}}&key={{apiKey}}"></iframe>
             </ul>
     </div>
+    <div>
+        Display COmments for the Show
+        {{allComments}}
+        <ol id="display-allcomments">
+            {{!-- {{#each comments as |comment|}}
+            <li>{{comment.comment_text}}</li>
+            {{/each}} --}}
+        </ol>>
+    </div>
 
     <button type="submit" class="login-join-btn" id="edit-show-btn">Edit this Show</button>
 
@@ -41,10 +50,21 @@
 </article> --}}
 
 
+<h3>Leave a Comment </h3>
+<div id="comment">
+    <textarea rows="5" id="comment_text"></textarea>
+    <button id="btnComment">Submit Comment</button>
+</div>
+
+<button type="submit" class="login-join-btn" id="back-to-show-list">Back to Show List</button>
+
+
 <script src='/js/back-button.js'></script>
 <script src='/js/edit-button.js'></script>
-
-
+<script src="../js/postcomment.js"></script>
 <script src="/js/view-count.js"></script>
-{{!--
-<script src='/js/back-button.js'></script> --}}
+
+
+
+
+

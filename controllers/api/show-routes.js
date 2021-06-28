@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Comment, Band, Show } = require('../../models');
 
-// Find all shows
+// Find all shows "/api/show"
 router.get('/', (req, res) => {
     Show.findAll(
         {
@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// Create show
+// Create show "/api/show"
 router.post('/', (req, res) => {
     Show.create({
         bandname: req.body.bandname,
@@ -51,6 +51,8 @@ router.post('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
 
 // make changes to show
 router.put('/:id', (req, res) => {
@@ -102,6 +104,34 @@ router.delete('/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+//displaying all comments for the show "/api/show/comments/:showID"
+router.get('/comment/:showID', (req, res) => {
+
+    console.log("displaying comments for a particular show/band");
+
+    Comment.findAll({
+        where: { show_id: req.params.showID }
+    })
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            res.status(500).json({ message: 'Cannot find comments for the show' })
+        });
+});
+
+//creating a new comment for the show "/api/show/comments"
+router.post('/comment', (req, res) => {
+    console.log("creating a comment for a show", req.body);
+    const newComment = { ...req.body, user_id: req.session.user_id };
+    console.log(newComment)
+    //user_id: session.username
+    Comment.create(newComment)
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            res.status(500).json({ message: 'Cannot add comments for the show', err })
+        });
+
 });
 
 module.exports = router;
