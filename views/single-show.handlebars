@@ -27,24 +27,31 @@
             </ul>
     </div>
 
+
     <button type="submit" class="login-join-btn" id="edit-show-btn">Edit this Show</button>
 
     <button type="submit" class="login-join-btn" id="back-to-show-list">Back to Show List</button>
+
+
+    {{!-- comments section --}}
+    <div=class"parent-comment">
+        <div class="comments">
+            <h2>Comments </h2><br>
+            {{allComments}}
+            <ul id="display-allcomments">
+            </ul><br>
+        </div>
+        <div class="comments" id="comment">
+            <h2>Leave a Comment </h2><br>
+            <textarea rows="5" id="comment_text"></textarea><br>
+            <button id="btnComment" class="login-join-btn">Submit Comment</button>
+        </div>
+    </div>
 
 
 </article>
-{{!--
-<article class="interface">
-    <button type="submit" class="login-join-btn" id="edit-show-btn">Edit this Show</button>
-
-    <button type="submit" class="login-join-btn" id="back-to-show-list">Back to Show List</button>
-</article> --}}
-
 
 <script src='/js/back-button.js'></script>
 <script src='/js/edit-button.js'></script>
-
-
+<script src="../js/postcomment.js"></script>
 <script src="/js/view-count.js"></script>
-{{!--
-<script src='/js/back-button.js'></script> --}}

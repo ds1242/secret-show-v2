@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"> -->
     <link rel="stylesheet" href="/css/style.css">
+
     {{!-- datepicker --}}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     {{!-- <link rel="stylesheet" href="/resources/demos/style.css"> --}}
@@ -17,8 +18,8 @@
 
 <body>
     <header id="header">
-        
- 
+
+
         {{#if loggedIn}}
         {{!-- <h1>You are logged in</h1> --}}
         <a href="/show">
@@ -29,7 +30,7 @@
         <a href="/">
             <img id="reflect" src="/images/Secret_Show.png" alt="Secret Show">
         </a>
-        {{/if}} 
+        {{/if}}
     </header>
 
     {{{ body }}}
@@ -37,6 +38,7 @@
     <div class="spacer"></div>
     {{#if loggedIn}}
     <footer>
+
         <form class='create-form-btn'>
             <article>
                 <button type="click" class="create-btn" id="create-btn">
@@ -64,6 +66,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+
 <script>
   $( function() {
     $( "#datepicker" ).datepicker();
@@ -71,5 +74,6 @@
   </script>
     
     {{!-- <script src="/js/landing.js"></script> --}}
+
 
 </body>
