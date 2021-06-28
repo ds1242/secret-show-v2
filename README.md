@@ -59,7 +59,7 @@ Just signup and start creating your shows and interact with other artists, or yo
   <br>
 * David Shaw / <a href="https://github.com/ds1242">ds1242 @ GitHub</a>
   <br>
-* Nick Rizzo / <a href="https://github.com/CastroOlympias">CastroOlympias @ GitHub</a>
+* Nick Rizzo / <a href="https://github.com/izzo2323">CastroOlympias @ GitHub</a>
   <br>
 * Yana Mkrtchyan / <a href="https://github.com/yana-mkr">yana-mkr @ GitHub</a>
   <br>
