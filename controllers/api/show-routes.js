@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         .catch(err => {
             res.status(500).json({ message: 'Cannot find show' })
         });
-
+        
 });
 
 router.get('/:id', (req, res) => {
@@ -112,11 +112,7 @@ router.get('/comment/:showID', (req, res) => {
     console.log("displaying comments for a particular show/band");
 
     Comment.findAll({
-        where: { show_id: req.params.showID },
-        // include: {
-        //     model: User,
-        //     attributes: ['id', 'username']
-        // }
+        where: { show_id: req.params.showID }
     })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
@@ -137,47 +133,5 @@ router.post('/comment', (req, res) => {
         });
 
 });
-// delete comment
-router.delete('/comment/:id', (req, res) => {
-    console.log("Deleting comment")
-    Comment.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbCommentData => {
-            if (!dbCommentData) {
-                res.status(404).json({ message: 'No comment found with this id' });
-                return;
-            }
-            res.json(dbCommentData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-// edit comment
-router.put('/comment/:id', (req, res) => {
-    console.log("Edit comment", req.body)
-    Comment.update(req.body, {
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbCommentData => {
-            if (!dbCommentData) {
-                res.status(404).json({ message: 'Caano tupdate  comment for this id' });
-                return;
-            }
-            res.json(dbCommentData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
 
 module.exports = router;

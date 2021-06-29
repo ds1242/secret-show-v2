@@ -7,7 +7,7 @@ const session = require('express-session');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 const { v4: uuidv4 } = require('uuid');
-
+const { truncate, truncateSync } = require('fs');
 require('dotenv').config();
 
 const app = express();
